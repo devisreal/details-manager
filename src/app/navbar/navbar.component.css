@@ -1,0 +1,14 @@
+.fonts {
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Quicksand", sans-serif;
+}
+
+.navbar-brand{
+ font-family: "Josefin Sans", sans-serif;   
+}
+.nav-item .nav-link{
+    font-family: "Quicksand", sans-serif;
+    font-size: medium;
+    font-weight: 600;
+}

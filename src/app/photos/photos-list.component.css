@@ -1,0 +1,25 @@
+.heading {
+  font-family: "Josefin Sans", sans-serif;
+}
+.lead {
+  font-family: "Poppins", sans-serif;
+  font-size: large;
+}
+mat-card-title {
+  font-family: "Quicksand", sans-serif;
+}
+
+@media screen and (max-width: 575px) {
+  .card-images {
+    width: 90%;
+    margin: 1em auto;
+  }
+}
+
+.view-more-btn {
+  font-family: "Poppins", sans-serif;
+}
+.view-more-btn:hover{
+    color: black;
+}
+

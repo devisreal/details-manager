@@ -1,0 +1,26 @@
+<div class="container-fluid px-lg-5 mt-5">
+  <div class="row gx-4">
+    <div class="col-lg-4 col-md-6 col-sm-7 mx-auto my-2 posts" *ngFor="let post of posts">
+      <div class="p-3 ">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="profile-picture" style="background-image: url({{post.profile_picture}});"></div>
+            <mat-card-title class="person-name" >{{post.first_name}} {{post.last_name}}</mat-card-title>
+            <mat-card-subtitle class="person-email ">{{post.email}}</mat-card-subtitle>
+          </mat-card-header>
+          <img
+            mat-card-image
+            [src]="post.post_image"
+            alt="{{post.email}}"
+          />
+          <mat-card-content>
+            <mat-card-title class="post-title">{{post.topic}}</mat-card-title>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-stroked-button class="bg-dark text-white" >Read More</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>  
+  </div>
+</div>

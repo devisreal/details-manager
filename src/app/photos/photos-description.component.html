@@ -1,0 +1,24 @@
+<mat-card  
+  class="description-card card col-lg-4 col-md-7 col-sm-8 mx-auto mt-lg-3 mt-md-5 mt-sm-5" 
+  *ngIf='photo'
+>
+<mat-card-content>
+    <mat-card-title>{{photo.author}}</mat-card-title>   
+    <mat-card-subtitle>Id: {{photo.id}}</mat-card-subtitle> 
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Image Width: {{photo.width}}</li>
+      <li class="list-group-item">Image Height: {{photo.height}}</li>
+      <li class="list-group-item">
+        <a href="{{photo.url}}" target="_blank" >Image Url</a>
+      </li>      
+    </ul>
+    
+    <img class="img-fluid" src="https://picsum.photos/id/{{photo.id}}/{{previewImageWidth}}/{{previewImageHeight}}" alt="{{photo.author}}">
+  </mat-card-content>
+  <mat-card-footer>
+    <button (click)="onBack()" mat-stroked-button class="go-back-btn m-3 ">
+      <i class="bi bi-caret-left-fill"></i> Go back
+    </button>
+  </mat-card-footer>
+</mat-card>
+

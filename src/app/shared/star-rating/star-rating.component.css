@@ -1,0 +1,10 @@
+.crop {
+  overflow: hidden;
+  cursor: pointer;
+}
+i {
+  font-size: small;
+}
+small {
+  font-family: "Poppins", sans-serif;
+}

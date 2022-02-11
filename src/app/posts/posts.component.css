@@ -1,0 +1,25 @@
+.profile-picture {
+  /* background-image: url('src/assets/man-in-suit.png'); */
+  background-size: cover;
+}
+
+.person-name {
+  font-family: "Poppins", sans-serif;
+}
+.person-email {
+  font-family: "Quicksand", sans-serif;
+}
+.post-title {
+  font-family: "Josefin Sans", sans-serif;
+}
+mat-card-actions button {
+  font-family: "Poppins", sans-serif;
+}
+
+@media screen and (max-width: 575px) {
+  .posts {
+    width: 100% !important;
+    margin: 0px auto !important;
+
+  }
+}

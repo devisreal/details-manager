@@ -1,0 +1,55 @@
+<div class="container px-0 mt-5">
+  <hr />
+  <div class="row" data-masonry='{"percentPosition": true }'>
+    <div class="col-md-7">
+      <h2 class="heading mt-5">Our Amazing Images all for your viewing</h2>
+      <p class="lead">
+        Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula
+        porta felis euismod semper. Praesent commodo cursus magna, vel
+        scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+      </p>
+    </div>
+    <div class="col-md-4 ms-auto">
+      <img class="img-fluid" src="{{ cameraImage }}" alt="" />
+    </div>
+  </div>
+</div>
+
+<div class="container my-5 px-0">
+  <div
+    *ngIf="photos.length"
+    class="row gx-4"
+    data-masonry='{"percentPosition": true }'
+  >
+    <div
+      *ngFor="let photo of photos"
+      class="
+        card-images
+        col-lg-4 col-md-6 col-sm-8
+        mt-lg-o mt-md-4 mt-sm-4
+        mx-auto
+      "
+    >
+      <mat-card>
+        <mat-card-title>Author: {{ photo.author }}</mat-card-title>
+        <img
+          class="p-3 d-block"
+          mat-card-image
+          [src]="photo.download_url"
+          alt="{{ photo.author }}"
+        />
+        <a
+          mat-stroked-button
+          class="view-more-btn"
+          [routerLink]="['/photos', photo.id]"
+        >
+          View More
+        </a>
+      </mat-card>
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    Error: {{ errorMessage }}
+  </div>
+</div>

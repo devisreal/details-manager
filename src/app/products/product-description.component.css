@@ -1,0 +1,18 @@
+.product-name {
+  font-family: "Quicksand", sans-serif;
+}
+.product-price {
+  font-family: "Poppins", sans-serif;
+}
+.product-description {
+  font-family: "Poppins", sans-serif;
+}
+.btn-div {
+  width: fit-content;
+  margin: 0px auto;
+}
+
+.btn-div button{
+  font-family: "Poppins", sans-serif;
+
+}

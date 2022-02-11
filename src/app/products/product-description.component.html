@@ -1,0 +1,30 @@
+<div class="container mt-2" *ngIf="product">
+  <button mat-raised-button class="bg-dark text-light" (click)="onBack()">
+    <i class="bi bi-chevron-left"></i> Go Back
+  </button>
+  <div class="row gx-4">
+    <div class="col-lg-6 col-md-6 col-sm-7 mx-auto">
+      <div class="p-3">
+        <mat-card class="p-5">
+          <img mat-card-image [src]="product.image" [alt]="product.title" />
+        </mat-card>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-7 mx-auto mt-5">
+      <div class="p-3">
+        <h3 class="product-name">{{ product.title }}</h3>
+        <h5 class="product-price mt-3 mb-5">{{ product.price | currency }}</h5>
+        <small class="product-description mt-5">
+          {{ product.description }}
+        </small>
+
+      </div>
+      <div class="btn-div">
+        <button mat-raised-button class="mt-4 bg-primary text-light">
+          Order Now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,117 @@
+<div class="container-fluid px-lg-4 px-md-4 px-sm-4 mt-5">
+  <div class="row gx-4" data-masonry='{"percentPosition": true }'>
+    <div class="col-lg-7">
+      <div class="p-3 mt-5">
+        <h1 class="display-5 jumbo-heading fw-bold">
+          It's time to make some new deals.
+        </h1>
+        <p class="col-md-8 fs-5">
+          Using a series of utilities, you can create this jumbotron, just like
+          the one in previous versions of Bootstrap. Check out the examples
+          below for how you can remix and restyle it to your liking.
+        </p>
+        <button mat-raised-button class="bg-dark text-light jumbo-btn">
+          Shop Now
+        </button>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-8 col-xs-7 mx-auto mt-lg-0 mt-md-4 mt-sm-5 mt-xs-5">
+      <div class="px-3">
+        <img class="img-fluid" src="{{ manInSuit }}" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center container-space">
+  <h2 class="choose-products">Choose your products with ease</h2>
+</div>
+
+<div class="container-fluid px-5 mt-5">
+  <div class="row gx-1">
+    <div class="col-md-6 px-lg-5">
+      <mat-form-field class="w-100 " appearance="fill">
+        <input
+          matInput
+          type="search"
+          placeholder="{{ searchInputPlaceholder }}"
+          [(ngModel)]="inputValue"
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <ul class="nav justify-content-center mt-2">
+        <li class="nav-item d-inline m-2"   >
+          <button class="category-btn"  mat-raised-button color="primary">
+            Men
+          </button>
+        </li>
+        <li class="nav-item d-inline m-2">
+          <button class="category-btn text-light bg-pink" mat-raised-button>
+            Women
+          </button>
+        </li>
+        <li class="nav-item d-inline m-2">
+          <button class="category-btn bg-warning" mat-raised-button>
+            Jewelry
+          </button>
+        </li>
+        <li class="nav-item d-inline m-2">
+          <button
+            class="category-btn bg-secondary text-light"
+            mat-raised-button
+          >
+            Electronics
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container px-0 my-5 " >
+  <div *ngIf="filteredProducts.length ; else noProducts " class="row gx-4" data-masonry='{"percentPosition": true }' >
+    <div *ngFor="let product of filteredProducts" class="col-lg-3 col-md-4 col-sm-6 mx-auto mt-lg-4 mt-md-4 mt-sm-5 product-card">
+      <div class="">
+        <mat-card>
+          <img
+            class="img-fluid p-3"
+            mat-card-image
+            *ngIf="product.image else noProducts"
+            [src]=' product.image'
+            alt="{{product.category}}"
+            title="{{product.category}}"
+          />
+          <mat-card-title >
+                {{product.title  }}            
+            </mat-card-title>
+            <mat-card-subtitle class="price">
+                {{product.price | currency  }}
+            </mat-card-subtitle>
+          <div class="icon-div"  >
+              <dm-star-rating
+                [rate]="product.rate"
+                [count]="product.count"
+              ></dm-star-rating>
+          </div>
+          <mat-card-actions align="end">            
+            <button mat-button class="order-btn" [routerLink]="['/products', product.id]" >Order Now</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  .
+</div>
+
+<ng-template #noProducts>
+  <h4 class="display-6 "> Product not available.</h4>
+</ng-template>
+
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>

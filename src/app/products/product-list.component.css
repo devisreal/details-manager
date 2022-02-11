@@ -1,0 +1,36 @@
+.jumbo-heading {
+  font-family: "Josefin Sans", sans-serif;
+}
+.jumbo-btn {
+  font-family: "Poppins", sans-serif;
+}
+.category-btn {
+  font-family: "Poppins", sans-serif;
+}
+.bg-pink {
+  background-color: #d63384;
+}
+.container-space {
+  margin-top: 120px;
+}
+.choose-products {
+  font-family: "Poppins", sans-serif;
+}
+mat-card-title {
+  font-size: medium;
+  font-family: "Quicksand", sans-serif;
+}
+.order-btn {
+  font-family: "Poppins", sans-serif;
+}
+.price {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 575px) {
+  .product-card {
+    width: 80%;
+    margin: 1em auto !important;
+  }
+}
